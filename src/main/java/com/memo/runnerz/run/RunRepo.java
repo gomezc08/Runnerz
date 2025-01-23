@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.simple.JdbcClient;
 
-
 @Repository
 public class RunRepo {
     private final JdbcClient jdbcClient;
