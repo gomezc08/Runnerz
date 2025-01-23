@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "Ehh Run",
+        "startedOn": "2020-01-01T06:00:00",
+        "endedOn": "2020-01-01T07:00:00",
+        "miles": 5,
+        "location": "OUTDOOR"
+    },
+    {
+        "id": 2,
+        "name": "Morning Run",
+        "startedOn": "2020-01-01T07:00:00",
+        "endedOn": "2020-01-01T08:00:00",
+        "miles": 10,
+        "location": "OUTDOOR"
+    },
+    {
+        "id": 3,
+        "name": "Evening Run",
+        "startedOn": "2020-01-01T18:00:00",
+        "endedOn": "2020-01-01T19:00:00",
+        "miles": 5,
+        "location": "INDOOR"
+    },
+    {
+        "id": 4,
+        "name": "Night Run",
+        "startedOn": "2020-01-01T20:00:00",
+        "endedOn": "2020-01-01T21:00:00",
+        "miles": 10,
+        "location": "OUTDOOR"
+    }
+]
