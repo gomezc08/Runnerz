@@ -77,7 +77,7 @@ public class RunRepositoryOLD {
             LocalDateTime.now(), 
             LocalDateTime.now().plus(1, ChronoUnit.HOURS), 
             5, 
-            Location.OUTDOOR));
+            Location.OUTDOOR, 1));
         
         
         runs.add(new Run(2, 
@@ -85,6 +85,6 @@ public class RunRepositoryOLD {
             LocalDateTime.now().plus(5, ChronoUnit.HOURS), 
             LocalDateTime.now().plus(6, ChronoUnit.HOURS), 
             4, 
-            Location.INDOOR));
+            Location.INDOOR, 1));
     }
 }

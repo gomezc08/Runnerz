@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.simple.JdbcClient;
 
 @Repository
-public class RunRepo {
+public class JdbcRunRepository {
     private final JdbcClient jdbcClient;
 
     // constructor (initalize JDBC).
-    public RunRepo(JdbcClient jdbcClient) {
+    public JdbcRunRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
     

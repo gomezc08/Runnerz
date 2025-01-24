@@ -26,9 +26,10 @@ import java.util.List;
 @RequestMapping("/api/runs")
 public class RunController {
 
-    private final RunRepo runRepo;
+    // using spring data jdbc to interact with the database instead of manually creating a jdbc client and doing stuff that way.
+    private final SpringDataRunRepository runRepo;
 
-    public RunController(RunRepo runRepo) {
+    public RunController(SpringDataRunRepository runRepo) {
         this.runRepo = runRepo;
     }
 
@@ -39,26 +40,32 @@ public class RunController {
 
     @GetMapping("/{id}")
     Run findById(@PathVariable int id) {
-        Optional<Run> run = runRepo.findByID(id);
+        Optional<Run> run = runRepo.findById(id);
         return run.orElse(null);
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     void createRun(@RequestBody Run run) {
-        runRepo.createRun(run);
+        runRepo.save(run);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void updateRun(@RequestBody Run run, @PathVariable int id) {
-        runRepo.updateRun(run, id);
+        runRepo.save(run);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteRun(@PathVariable int id) {
-        runRepo.deleteRun(id);
+        runRepo.delete(runRepo.findById(id).get()); 
+    }
+
+    // optional thing i did to practice - finds run by location (look at SpringDataRunRepository.java).
+    @GetMapping("/location/{location}")
+    List<Run> findByLocation(@PathVariable String location) {
+        return runRepo.findByLocation(location);
     }
 
     

@@ -17,12 +17,12 @@ import org.slf4j.LoggerFactory;
 
 @Component
 public class RunJsonLoader implements CommandLineRunner {
-    private final RunRepo runRepo;
+    private final JdbcRunRepository runRepo;
     private final ObjectMapper objectMapper;
     private static final Logger log = LoggerFactory.getLogger(RunJsonLoader.class);
 
     // constructor.
-    public RunJsonLoader(RunRepo runRepo, ObjectMapper objectMapper) {
+    public RunJsonLoader(JdbcRunRepository runRepo, ObjectMapper objectMapper) {
         this.runRepo = runRepo;
         this.objectMapper = objectMapper;
     }
